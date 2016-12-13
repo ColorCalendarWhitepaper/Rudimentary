@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<html lang=en>
+
+<head>
+    <title>Permutations with Arrays</title>
+</head>
+
+<body></body>
+
+<script type="text/javascript">
+    // Some random Arrays
+    var colorArray = ['Blue', 'Red', 'Green', 'Yellow', 'Orange', 'Purple'];
+    var emotionArray = ['Ticklish', 'Thoughtful', 'Loving', 'Happy', 'Playful',
+        'Dancing', 'Singing', 'Greatful', 'Humorous', 'Forgiving', 'Brave',
+        'Curious'
+    ];
+    var animalArray = ['Elephant', 'Rhino', 'Hippopotamus', 'Dragonfly', 'Owl',
+        'Walrus', 'Grasshopper', 'Cheetah', 'Dolphin', 'Donkey', 'Rooster',
+        'Raven'
+    ];
+    var locationArray = ['Sirius', 'Canopus', 'Arcturus', 'Rigil Kentaurus',
+        'Vega', 'Capella', 'Rigel', 'Procyon', 'Achernar', 'Betelgeuse',
+        'Hadar', 'Altair'
+    ];
+    // Assign random values from arrays
+    var randomEmotion = emotionArray[Math.floor(Math.random() * emotionArray.length)];
+    var randomColor = colorArray[Math.floor(Math.random() * colorArray.length)];
+    var randomAnimal = animalArray[Math.floor(Math.random() * animalArray.length)];
+    var randomLocation = locationArray[Math.floor(Math.random() * locationArray.length)];
+    // Concatenate random values from arrays
+    var uniqueUserName = randomEmotion.concat(' ' + randomColor, ' ' + randomAnimal);
+    // Display the new value
+    document.write('Welcome, you shall be known as the: ' + "<b>" +
+        uniqueUserName + "</b>" + ' from ' + "<b>" + randomLocation + "</b><BR>");
+</script>
+
+</html>
