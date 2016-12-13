@@ -1,0 +1,31 @@
+<!doctype html>
+<meta charset=utf-8>
+<html lang=en>
+
+<head>
+    <title>Time Display Static</title>
+</head>
+
+<body>
+</body>
+
+<script type="text/javascript">
+    var dayOfWeek = ["Sunday ", "Monday ", "Tuesday ", "Wednesday ", "Thursday ", "Friday ", "Saturday ", "Sunday "];
+    var monthOfYear = ["January ", "February ", "March ", "April ", "May ", "June ", "July ", "August ", "September ", "October ", "Novemeber ", "December "];
+    var objectTime = new Date();
+    var currentTime = objectTime.getTime();
+    var dayOfMonth = objectTime.getDate();
+    var currentDay = objectTime.getDay();
+    var currentMonth = objectTime.getMonth();
+    var currentYear = objectTime.getFullYear();
+    var currentHour = objectTime.getHours();
+    var currentMinute = objectTime.getMinutes();
+    var currentSecond = objectTime.getSeconds();
+    var currentMilliSecond = objectTime.getMilliseconds();
+    var localDate = dayOfWeek[currentDay] + monthOfYear[currentMonth] + dayOfMonth + ", " + currentYear
+    var localTime = currentHour + ":" + currentMinute + ":" + currentSecond + ":" + currentMilliSecond;
+    document.write(currentTime + " - Milliseconds since Epoch January 1, 1970 (midnight UTC)<br><br><br>");
+    document.write(localDate + ", " + localTime);
+</script>
+
+</html>
