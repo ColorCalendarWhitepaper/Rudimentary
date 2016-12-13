@@ -1,0 +1,400 @@
+<!doctype html>
+<meta charset=utf-8>
+<html lang=en>
+
+<head>
+<title>Detecting Mozilla Firefox 46</title>
+<noscript>Failed to load page. Perhaps this is due to a browser add-ons, ad-blocker, extention or Javascript is disabled.</noscript>
+</head>
+
+<body>
+<div id="displayFoxVersion"></div>
+</body>
+
+<script type="text/javascript">
+// Element to display version
+var outputVersion = document.getElementById("displayFoxVersion");
+try {
+    // Match UserAgent string with Firefox Desktop
+    // Detect hybrid Gecko browsers and mobile
+    if (navigator.userAgent.match(/firefox/i) &&
+        !navigator.userAgent.match(/mobi|tablet|fennec|android|netscape|seamonkey|iceweasel|iceape|icecat|waterfox|gnuzilla|shadowfox|swiftfox/i)) {
+        // Create Element and Array to test availability  
+        var createdElement = document.createElement('div'),
+            createdArray = [],
+            firefoxVersion = "0";
+            
+        // Firefox 1.0 released November 9, 2004 
+        // Check a current feature as being true, or NOT undefined 
+        // AND check future features as EQUAL undefined
+        if (typeof window.alert !== "undefined" &&
+            typeof window.XPCNativeWrapper === "undefined" &&
+            typeof window.URL === "undefined") {
+            firefoxVersion = "1";
+        }
+        
+        // Firefox 1.5 released October 15, 2003 
+        // XPCNativeWrapper used to create security wrapper
+        else if (typeof window.XPCNativeWrapper !== "undefined" &&
+            typeof window.globalStorage === "undefined" &&
+            typeof window.devicePixelRatio === "undefined" &&
+            typeof createdElement.style.animation === "undefined" &&
+            typeof document.querySelector === "undefined") {
+            firefoxVersion = "1.5";
+        }
+        
+        // Firefox 2 released October 24, 2006
+        // globalStorage later deprecated in favor of localstorage
+        else if (typeof window.globalStorage !== "undefined" &&
+            typeof window.postMessage === "undefined") {
+            firefoxVersion = "2";
+        }
+        
+        // Firefox 3 released June 17, 2008
+        // postMessage for cross window messaging
+        else if (typeof window.postMessage !== "undefined" &&
+            typeof document.querySelector === "undefined") {
+            firefoxVersion = "3";
+        }
+        
+        // Firefox 3.5 released June 30, 2009
+        // querySelector returns list of the elements from document
+        else if (typeof document.querySelector !== "undefined" &&
+            typeof window.mozRequestAnimationFrame === "undefined" &&
+            typeof Reflect === "undefined") {
+            firefoxVersion = "3.5";
+        }
+        
+        // Firefox 4 released March 22, 2011
+        // window.URL is Gecko, Webkit is window.webkitURL, manages object URLs
+        else if (typeof window.URL !== "undefined" &&
+            typeof createdElement.style.MozAnimation === "undefined") {
+            firefoxVersion = "4";
+        }
+        
+        // After April 2011 releases every six weeks on Tuesday
+        // Firefox 5 released June 21, 2011
+        // style.MozAnimation for CSS animation, renamed to style.animation
+        else if (typeof createdElement.style.MozAnimation !== "undefined" &&
+            typeof WeakMap === "undefined") {
+            firefoxVersion = "5";
+        }
+        
+        // Firefox 6 released August 16, 2011
+        // WeakMap collects key value pairs weakly referenced
+        else if (typeof WeakMap !== "undefined" &&
+            typeof createdElement.style.textOverflow === "undefined") {
+            firefoxVersion = "6";
+        }
+        
+        // Firefox 7 released September 27, 2011
+        // textOverflow manages overflowed non displayed content
+        else if (typeof createdElement.style.textOverflow !== "undefined" &&
+            typeof createdElement.insertAdjacentHTML === "undefined") {
+            firefoxVersion = "7";
+        }
+        
+        // Firefox 8 released November 8, 2011
+        // insertAdjacentHTML parses as HTML and inserts into specified position
+        // faster than direct innerHTML manipulation and
+        // appends without affecting other elements under the same parent
+        else if (typeof createdElement.insertAdjacentHTML !== "undefined" &&
+            typeof navigator.doNotTrack === "undefined") {
+            firefoxVersion = "8";
+        }
+        
+        // Firefox 9 released December 20, 2011
+        // mozIndexedDB dropped ver 16, renamed window.indexedDB 
+        // IndexDB improved functionality than localstorage
+        else if (typeof window.mozIndexedDB !== "undefined" &&
+            typeof document.mozFullScreenEnabled === "undefined") {
+            firefoxVersion = "9";
+        }
+        
+        // Firefox 10 released January 31, 2012
+        // mozFullScreenEnabled reports if full-screen mode is available
+        else if (typeof document.mozFullScreenEnabled !== "undefined" &&
+            typeof window.mozCancelAnimationFrame === "undefined" &&
+            typeof Reflect === "undefined") {
+            firefoxVersion = "10";
+        }
+        
+        // Firefox 11 released March 13, 2012
+        // mozCancelAnimationFrame prior to Firefox 23 prefixed with moz
+        // Cancels an animation frame request
+        else if (typeof window.mozCancelAnimationFrame !== "undefined" &&
+            typeof createdElement.style.MozTextAlignLast === "undefined") {
+            firefoxVersion = "11";
+        }
+        
+        // Firefox 12 released April 24, 2012
+        // MozTextAlignLast how the last line is aligned
+        else if (typeof createdElement.style.MozTextAlignLast !== "undefined" &&
+            typeof createdElement.style.MozOpacity !== "undefined") {
+            firefoxVersion = "12";
+        }
+        
+        // Firefox 13 released June 5, 2012
+        // MozOpacity dropped from this version
+        else if (typeof createdElement.style.MozOpacity === "undefined" &&
+            typeof window.globalStorage !== "undefined") {
+            firefoxVersion = "13";
+        }
+        
+        // Firefox 14 released June 26, 2012
+        // globalStorage dropped from this version
+        else if (typeof window.globalStorage === "undefined" &&
+            typeof createdElement.style.borderImage === "undefined" &&
+            typeof document.querySelector !== "undefined") {
+            firefoxVersion = "14";
+        }
+        
+        // Firefox 15 released August 28, 2012
+        // borderImage allows drawing an image on the borders of elements
+        else if (typeof createdElement.style.borderImage !== "undefined" &&
+            typeof createdElement.style.animation === "undefined") {
+            firefoxVersion = "15";
+        }
+        
+        // Firefox 16 released October 9, 2012
+        // animation was MozAnimation
+        else if (typeof createdElement.style.animation !== "undefined" &&
+            typeof createdElement.style.iterator === "undefined" &&
+            typeof Math.hypot === "undefined") {
+            firefoxVersion = "16";
+        }
+        
+        // Firefox 17 released November 20, 2012
+        // version 27 drops iterator and renames italic
+        // Used to iterate over enumerable properties of an object
+        else if (typeof createdElement.style.iterator !== "undefined" &&
+            typeof window.devicePixelRatio === "undefined") {
+            firefoxVersion = "17";
+        }
+        
+        // Firefox 18 released January 8, 2013
+        // devicePixelRatio returns ratio of one vertical pixel between devices
+        else if (typeof window.devicePixelRatio !== "undefined" &&
+            typeof window.getInterface === "undefined" &&
+            typeof createdElement.style.mixBlendMode === "undefined") {
+            firefoxVersion = "18";
+        }
+        
+        // Firefox 19 released February 19, 2013
+        // getInterface dropped and renamed in version 32
+        // Retrieves specified interface pointers
+        else if (typeof window.getInterface !== "undefined" &&
+            typeof Math.imul === "undefined") {
+            firefoxVersion = "19";
+        }
+        
+        // Firefox 20 released April 2, 2013
+        // Math.imul provides fast 32 bit integer multiplication
+        else if (typeof Math.imul !== "undefined" &&
+            typeof window.crypto.getRandomValues === "undefined") {
+            firefoxVersion = "20";
+        }
+        
+        // Firefox 21 released May 14, 2013
+        // getRandomValues lets you get cryptographically random values
+        else if (typeof window.crypto.getRandomValues !== "undefined" &&
+            typeof createdElement.style.flex === "undefined") {
+            firefoxVersion = "21";
+        }
+        
+        // Firefox 22 released June 25, 2013
+        // flex can alter dimensions to fill available space
+        else if (typeof createdElement.style.flex !== "undefined" &&
+            typeof window.cancelAnimationFrame === "undefined") {
+            firefoxVersion = "22";
+        }
+        
+        // Firefox 23 released August 6, 2013
+        // cancelAnimationFrame was mozCancelAnimationFrame
+        else if (typeof window.cancelAnimationFrame !== "undefined" &&
+            typeof document.loadBindingDocument !== "undefined" &&
+            typeof Math.trunc === "undefined") {
+            firefoxVersion = "23";
+        }
+        
+        // Firefox 24 released September 17, 2013
+        // loadBindingDocument dropped
+        // loadBindingDocument reintroduced in 25 then dropped again in 26 
+        else if (typeof document.loadBindingDocument === "undefined" &&
+            typeof Math.trunc === "undefined") {
+            firefoxVersion = "24";
+        }
+        
+        // Firefox 25 released October 29, 2013
+        // Math.trunc returns number removing fractional digits
+        else if (typeof Math.trunc !== "undefined" &&
+            typeof document.loadBindingDocument !== "undefined") {
+            firefoxVersion = "25";
+        }
+        
+        // Firefox 26 released December 10, 2013
+        // loadBindingDocument dropped
+        else if (typeof Math.trunc !== "undefined" &&
+            typeof Math.hypot === "undefined") {
+            firefoxVersion = "26";
+        }
+        
+        // Firefox 27 released February 4, 2014
+        // Math.hypot returns square root of the sum of squares
+        else if (typeof Math.hypot !== "undefined" &&
+            typeof createdArray.entries === "undefined") {
+            firefoxVersion = "27";
+        }
+        
+        // Firefox 28 released March 18, 2014
+        // entries returns key value pairs for arrays
+        else if (typeof createdArray.entries !== "undefined" &&
+            typeof createdElement.style.boxSizing === "undefined") {
+            firefoxVersion = "28";
+        }
+        
+        // Firefox 29 released April 29, 2014
+        // boxSizing alters CSS box model, calculates width and height of elements
+        else if (typeof createdElement.style.boxSizing != "undefined" &&
+            typeof createdElement.style.backgroundBlendMode === "undefined") {
+            firefoxVersion = "29";
+        }
+        
+        // Firefox 30 released June 10, 2014
+        // backgroundBlendMode blends elements background images
+        else if (typeof createdElement.style.backgroundBlendMode !== "undefined" &&
+            typeof createdElement.style.paintOrder === "undefined") {
+            firefoxVersion = "30";
+        }
+        
+        // Firefox 31 released July 22, 2014
+        // paintOrder specifies the order fill, stroke, markers of shape or element
+        else if (typeof createdElement.style.paintOrder !== "undefined" &&
+            typeof createdElement.style.mixBlendMode === "undefined") {
+            firefoxVersion = "31";
+        }
+        
+        // Firefox 32 released September 2, 2014
+        // mixBlendMode how an element should blend 
+        else if (typeof createdElement.style.mixBlendMode !== "undefined" &&
+            typeof Number.toInteger !== "undefined") {
+            firefoxVersion = "32";
+        }
+        
+        // Firefox 33 released October 14, 2014
+        // numberToIntger dropped, used to convert values to integer
+        else if (typeof Number.toInteger === "undefined" &&
+            typeof createdElement.style.fontFeatureSettings === "undefined") {
+            firefoxVersion = "33";
+        }
+        
+        // Firefox 34 released December 1, 2014
+        // fontFeatureSettings control over advanced typographic features
+        else if (typeof createdElement.style.fontFeatureSettings !== "undefined" &&
+            typeof navigator.mozIsLocallyAvailable !== "undefined") {
+            firefoxVersion = "34";
+        }
+        
+        // Firefox 35 released January 13, 2015
+        // mozIsLocallyAvailable dropped
+        else if (typeof navigator.mozIsLocallyAvailable === "undefined" &&
+            typeof createdElement.style.MozWindowDragging === "undefined") {
+            firefoxVersion = "35";
+        }
+        
+        // Firefox 36 released February 24, 2015
+        // quote returns a copy of the string
+        else if (typeof String.quote !== "undefined" &&
+            typeof createdElement.style.MozWindowDragging !== "undefined") {
+            firefoxVersion = "36";
+        }
+        
+        // Firefox 37 released March 31, 2015
+        // quote quickly dropped
+        else if (typeof String.quote === "undefined" &&
+            typeof createdElement.style.rubyPosition === "undefined") {
+            firefoxVersion = "37";
+        }
+        
+        // Firefox 38 released May 12, 2015
+        // rubyPosition defines position of a ruby element relative to its base element
+        else if (typeof createdElement.style.rubyPosition !== "undefined" &&
+            typeof window.Headers === "undefined") {
+            firefoxVersion = "38";
+        }
+        
+        // Firefox 39 released July 2, 2015
+        // Headers allows us to create our own headers objects 
+        else if (typeof window.Headers !== "undefined" &&
+            typeof Symbol.match === "undefined") {
+            firefoxVersion = "39";
+        }
+        
+        // Firefox 40 released August 11, 2015
+        // match matches a regular expression against a string
+        else if (typeof Symbol.match !== "undefined" &&
+            typeof Symbol.species === "undefined") {
+            firefoxVersion = "40";
+        }
+        
+        // Firefox 41 released September 22, 2015
+        // species allows subclasses to over ride the default constructor
+        else if (typeof Symbol.species !== "undefined" &&
+            typeof Reflect === "undefined") {
+            firefoxVersion = "41";
+        }
+        
+        // Firefox 42 released November 3, 2015
+        // mozRequestAnimationFrame and mozFullScreenEnabled dropped
+        // Reflect offers methods for interceptable JavaScript operations
+        else if (typeof Reflect !== "undefined" &&
+            typeof window.screen.orientation === "undefined") {
+            firefoxVersion = "42";
+        }
+        
+        // Firefox 43 released December 15, 2015
+        // orientation is mozOrientation in B2G and Android
+        else if (typeof window.screen.orientation !== "undefined" &&
+            typeof document.charset === "undefined") {
+            firefoxVersion = "43";
+        }
+        
+        // Firefox 44 released January 26, 2016
+        // charset is for legacy, use document.characterSet
+        else if (typeof document.charset !== "undefined" &&
+            typeof window.onstorage === "undefined") {
+            firefoxVersion = "44";
+        }
+        
+        // Firefox 45 released March 8, 2016
+        // onstorage contains an event handler that runs when the storage event fires
+        else if (typeof window.onstorage !== "undefined" &&
+            typeof window.onabsolutedeviceorientation === "undefined") {
+            firefoxVersion = "45";
+        }
+        
+        // Firefox 46 - beta
+        // onabsolutedeviceorientation
+        else if (typeof window.onabsolutedeviceorientation !== "undefined") {
+            firefoxVersion = "46 or above";
+        }
+        
+        // Else could not verify
+        else {
+            outputVersion.innerHTML = "Could not verify Mozilla Firefox";
+        }
+        
+        // Display Firefox version
+        outputVersion.innerHTML = "Verified as Mozilla Firefox " + firefoxVersion;
+        
+        // Else not detected
+    } else {
+        outputVersion.innerHTML = "Mozilla Firefox not detected";
+    }
+} catch (e) {
+    // Statement to handle exceptions
+    outputVersion.innerHTML = "An unknown error occured. Perhaps the default settings in Firefox have been changed in about.config ";
+}
+</script>
+
+</html>
