@@ -1,0 +1,41 @@
+<!doctype html>
+<meta charset=utf-8>
+<html lang=en>
+
+<head>
+    <title>Arrays Remove Duplicates</title>
+</head>
+
+<body></body>
+
+<script type="text/javascript">
+    // Object with duplicate values 
+    var arrayWithDuplicates = ['1', '9', '3', '4', '5', '2', '2', '9', '6'];
+    // Using the reduce method from left-to-right 
+    var arrayWithoutDuplicates = arrayWithDuplicates.reduce(function(callBack, newValue) {
+        if (callBack.indexOf(newValue) < 0)
+            callBack.push(newValue);
+        return callBack;
+    }, []);
+    document.write(arrayWithDuplicates + "<br>");
+    document.write(arrayWithoutDuplicates + "<br><br>");
+    // Using the hasOwnProperty method 
+    var withDuplicates = ['1', '9', '3', '4', '5', '2', '2', '9', '6'];
+    function noDuplicates(withDuplicates) {
+        var container = {};
+        return withDuplicates.filter(function(item) {
+            return container.hasOwnProperty(item) ? false : (container[item] = true);
+        });
+    }
+    document.write(withDuplicates + "<br>");
+    document.write(noDuplicates(withDuplicates) + "<br><br>");
+    // Filter if first position of element is equal to current position
+    var agentArray = ['1', '9', '3', '4', '5', '2', '2', '9', '6'];
+    uniqueArray = agentArray.filter(function(item, pos) {
+        return agentArray.indexOf(item) == pos;
+    })
+    document.write(agentArray + "<br>");
+    document.write(uniqueArray + "<br>");
+</script>
+
+</html>
