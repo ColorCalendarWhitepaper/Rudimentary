@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<html lang=en>
+
+<head>
+    <title>Centering Parent to Child</title>
+</head>
+
+<style>
+    html,
+    body,
+    .container {
+        height: 100%;
+        margin: 0;
+    }
+    
+    .container {
+        position: relative;
+        text-align: center;
+    }
+    
+    .container> p {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin-top: -9px;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <p>Centered p to container</p>
+    </div>
+
+</body>
+
+</html>
