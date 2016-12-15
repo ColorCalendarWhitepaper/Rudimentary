@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset=utf-8>
+<html lang=en>
+
+<head>
+    <title> </title>
+</head>
+
+<body>
+    <!-- Canvas for Mozilla, no transparency required -->
+    <canvas id="blueSquare" width="300" height="300" moz-opaque></canvas>
+</body>
+
+<script>
+    var blueSquare = document.getElementById("blueSquare");
+    var squareAttributes = blueSquare.getContext("2d");
+    squareAttributes.fillStyle = "blue";
+    squareAttributes.fillRect(0, 0, blueSquare.width, blueSquare.height);
+</script>
+
+</html>
