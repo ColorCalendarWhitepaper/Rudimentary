@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset=utf-8>
+<html lang=en>
+
+<head>
+    <title>Canvas Draw Red Square</title>
+</head>
+
+<body>
+    <!-- Canvas for Mozilla Firefox, No transparency required -->
+    <canvas id="blueSquare" width="300" height="300" moz-opaque></canvas
+    <canvas id="redSquare" width="200" height="200" moz-opaque></canvas>
+</body>
+
+<script>
+    var blueSquare = document.getElementById("blueSquare");
+    var blueAttributes = blueSquare.getContext("2d");
+    blueAttributes.fillStyle = "blue";
+    blueAttributes.fillRect(0, 0, blueSquare.width, blueSquare.height);
+    var redSquare = document.getElementById("redSquare");
+    var redAttributes = redSquare.getContext("2d");
+    redAttributes.fillStyle = "red";
+    redAttributes.fillRect(0, 0, 50, 50);
+</script>
+
+</html>
