@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<html lang=en>
+
+<head>
+    <title>Centering Images CSS </title>
+</head>
+
+<style type="text/css">
+    body {
+        background-color: #FFFFFF;
+        min-width: 250px;
+        min-height: 250px;
+    }
+    
+    #page_wrap {
+        width: 600px;
+        margin: 30px auto;
+        text-align: center;
+    }
+    
+    #upper_left {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url("upperLeft.jpg");
+        background-repeat: no-repeat;
+        background-color: red;
+    }
+    
+    #upper_right {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        right: 0%;
+        background-image: url("upperRight.jpg");
+        background-repeat: no-repeat;
+        background-color: red;
+    }
+    
+    #lower_left {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        bottom: 0%;
+        left: 0;
+        background-image: url("lowerLeft.jpg");
+        background-repeat: no-repeat;
+        background-color: red;
+    }
+    
+    #lower_right {
+        width: 100px;
+        height: 100px;
+        bottom: 0%;
+        right: 0%;
+        position: absolute;
+        background-image: url("lowerRight.jpg");
+        background-repeat: no-repeat;
+        background-color: red;
+    }
+</style>
+
+</head>
+
+<body>
+    <div id="upper_left"></div>
+    <div id="upper_right"></div>
+    <div id="lower_left"></div>
+    <div id="lower_right"></div>
+</body>
+
+</html>
