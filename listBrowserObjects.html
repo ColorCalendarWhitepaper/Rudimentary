@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Object Explorer</title>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>Property</td><td>Data Type</td><td>Value</td>
+  </tr>
+
+<script language="javascript" type="text/javascript">
+<!--
+
+var obj = window.navigator;
+
+for (var prop in obj) {
+  document.write("<tr>");
+  document.write("  <td>" + prop + "</td>");
+  document.write("  <td>" + typeof obj[prop] + "</td>");
+  document.write("  <td>" + obj[prop] + "</td>");
+  document.write("</tr>");
+}
+
+//-->
+</script>
+
+</table>
+
+</body>
+</html>
