@@ -1,0 +1,44 @@
+<!doctype html>
+<meta charset=utf-8>
+<html lang=en>
+
+<head>
+    <title>Time Display Dynamic </title>
+</head>
+
+<body onload="startTime()">
+    <div id="timeDisplay"></div>
+</body>
+
+<script type="text/javascript">
+    function startTime() {
+        var dayOfWeek = ["Sunday ", "Monday ", "Tuesday ", "Wednesday ", "Thursday ", "Friday ", "Saturday ", "Sunday "];
+        var monthOfYear = ["January ", "February ", "March ", "April ", "May ", "June ", "July ", "August ", "September ", "October ", "Novemeber ", "December "];
+        var objectTime = new Date();
+        var currentTime = objectTime.getTime();
+        var dayOfMonth = objectTime.getDate();
+        var currentDay = objectTime.getDay();
+        var currentMonth = objectTime.getMonth();
+        var currentYear = objectTime.getFullYear();
+        var currentHour = objectTime.getHours();
+        var currentMinute = objectTime.getMinutes();
+        var currentSecond = objectTime.getSeconds();
+        var currentMilliSecond = objectTime.getMilliseconds();
+        currentMinute = checkZeroTime(currentMinute);
+        currentSecond = checkZeroTime(currentSecond);
+        var localDate = dayOfWeek[currentDay] + monthOfYear[currentMonth] + dayOfMonth + ", " + currentYear
+        var localTime = currentHour + ":" + currentMinute + ":" + currentSecond + ":" + currentMilliSecond;
+        var timerRepeat = setTimeout(startTime, 500);
+        document.getElementById('timeDisplay').innerHTML = localDate + ", " + localTime;
+    }
+    
+    // concatinate zero for seconds and minutes less than 10
+    function checkZeroTime(i) {
+        if (i < 10) {
+            i = "0" + i
+        };
+        return i;
+    }
+</script>
+
+</html>
