@@ -1,0 +1,44 @@
+<!doctype html>
+<meta charset=utf-8>
+<html lang=en>
+
+<head>
+    <title>Half and Half</title>
+</head>
+
+<body>
+
+</body>
+
+<script type="text/javascript">
+    var stageSize = {
+        "stageWidth": window.innerWidth + "px",
+        "stageHeight": window.innerHeight + "px",
+        "halfWidth": window.innerWidth / 2 + "px",
+        "halfHeight": window.innerHeight / 2 + "px"
+    };
+    
+    var blueDiv = document.createElement('div0');
+    var redDiv = document.createElement('div1');
+    
+    blueDiv.style.background = 'blue';
+    blueDiv.style.position = 'absolute';
+    blueDiv.style.padding = '0px';
+    blueDiv.style.left = '0px';
+    blueDiv.style.top = '0px';
+    blueDiv.style.width = stageSize.halfWidth;
+    blueDiv.style.height = stageSize.stageHeight;
+    
+    redDiv.style.background = 'red';
+    redDiv.style.padding = '0px';
+    redDiv.style.position = 'absolute';
+    redDiv.style.top = '0px';
+    redDiv.style.left = stageSize.halfWidth;
+    redDiv.style.width = stageSize.halfWidth;
+    redDiv.style.height = stageSize.stageHeight;
+    
+    document.body.appendChild(blueDiv);
+    document.body.appendChild(redDiv);
+</script>
+
+</html>
