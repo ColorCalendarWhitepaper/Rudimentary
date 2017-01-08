@@ -1,0 +1,74 @@
+<!doctype html>
+<meta charset=utf-8>
+<html lang=en>
+
+<head>
+    <title>Parse Firefox UserAgent</title>
+</head>
+
+<body></body>
+
+<script type="text/javascript">
+    var userAgentString = navigator.userAgent;
+    document.write(userAgentString + "<br>");
+    
+    // Replace Mozilla
+    stripAgentMozilla = userAgentString.replace("Mozilla/5.0 ", "");
+    document.write(stripAgentMozilla + "<br>");
+    
+    // Replace commas
+    stripAgentCommas = stripAgentMozilla.replace(/,/g, "");
+    document.write(stripAgentCommas + "<br>");
+    
+    // Replace compatible
+    stripAgentCompatible = stripAgentCommas.replace("compatible", "");
+    document.write(stripAgentCompatible + "<br>");
+    
+    // Replace khtml
+    stripAgentKHTML = stripAgentCompatible.replace("KHTML", "");
+    document.write(stripAgentKHTML + "<br>");
+    
+    // Replace like gecko
+    stripAgentGecko = stripAgentKHTML.replace("like Gecko", "");
+    document.write(stripAgentGecko + "<br>");
+    
+    // Replace gecko version
+    stripAgent201 = stripAgentGecko.replace("Gecko/20100101 ", "");
+    document.write(stripAgentGecko + "<br>");
+    
+    // Replace brackets
+    stripAgentBrackets = stripAgent201.replace(/\(|\)/g, "");
+    document.write(stripAgentBrackets + "<br>");
+    
+    // Replace forward slashes and collons 
+    stripAgentCharacters = stripAgentBrackets.replace(/\/|;/g, "");
+    document.write(stripAgentCharacters + "<br>");
+    
+    // Replace extra spaces with just one space
+    stripAgentSpaces = stripAgentCharacters.replace(/  +/g, " ");
+    document.write(stripAgentSpaces + "<br>");
+    
+    // Trim spaces from begining and end
+    stripAgentTrim = stripAgentSpaces.trim();
+    document.write(stripAgentTrim + "<br>");
+    
+    // Split into array based on spaces
+    var agentArray = stripAgentTrim.split(" ");
+    document.write("String length: " + agentArray.length + "<br><br><br>");
+    for (i = 0; i < agentArray.length; i++) {
+        var Webkit = agentArray[i].match("AppleWebKit");
+        var Chrome = agentArray[i].match("Chrome");
+        var Safari = agentArray[i].match("Safari");
+        if (Webkit) {
+            document.write("Version of Webkit: " + agentArray[i].replace("AppleWebKit", "") + "<br>");
+        } else if (Chrome) {
+            document.write("Version of Chrome: " + agentArray[i].replace("Chrome", "") + "<br>");
+        } else if (Safari) {
+            document.write("Version of Safari: " + agentArray[i].replace("Safari", "") + "<br>");
+        } else {
+            document.write(agentArray[i] + "<br>");
+        }
+    }
+</script>
+
+</html>
