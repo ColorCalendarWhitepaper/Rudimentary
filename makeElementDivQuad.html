@@ -1,0 +1,66 @@
+<!doctype html>
+<meta charset=utf-8>
+<html lang=en>
+
+<head>
+    <title>4 split Quadrants</title>
+</head>
+
+<body></body>
+
+<script type="text/javascript">
+    var stageSize = {
+        "stageWidth": window.innerWidth + "px",
+        "stageHeight": window.innerHeight + "px",
+        "halfWidth": window.innerWidth / 2 + "px",
+        "halfHeight": window.innerHeight / 2 + "px"
+    };
+    
+    var greenDiv = document.createElement('div0');
+    var redDiv = document.createElement('div1');
+    var yellowDiv = document.createElement('div2');
+    var blueDiv = document.createElement('div3');
+    
+    greenDiv.style.background = 'green';
+    greenDiv.style.position = 'absolute';
+    greenDiv.style.padding = '0px';
+    greenDiv.style.left = '0px';
+    greenDiv.style.top = '0px';
+    greenDiv.style.width = stageSize.halfWidth;
+    greenDiv.style.height = stageSize.halfHeight;
+    greenDiv.innerHTML = stageSize.stageWidth + "<br>" + stageSize.stageHeight;
+    
+    redDiv.style.background = 'red';
+    redDiv.style.padding = '0px';
+    redDiv.style.position = 'absolute';
+    redDiv.style.top = '0px';
+    redDiv.style.left = stageSize.halfWidth;
+    redDiv.style.width = stageSize.halfWidth;
+    redDiv.style.height = stageSize.halfHeight;
+    redDiv.innerHTML = "<br>";
+    
+    yellowDiv.style.background = 'yellow';
+    yellowDiv.style.padding = '0px';
+    yellowDiv.style.position = 'absolute';
+    yellowDiv.style.top = stageSize.halfHeight;
+    yellowDiv.style.left = stageSize.halfWidth;
+    yellowDiv.style.width = stageSize.halfWidth;
+    yellowDiv.style.height = stageSize.halfHeight;
+    yellowDiv.innerHTML = "<br>";
+    
+    blueDiv.style.background = 'blue';
+    blueDiv.style.padding = '0px';
+    blueDiv.style.position = 'absolute';
+    blueDiv.style.top = stageSize.halfHeight;
+    blueDiv.style.left = '0px';
+    blueDiv.style.width = stageSize.halfWidth;
+    blueDiv.style.height = stageSize.halfHeight;
+    blueDiv.innerHTML = "<br>";
+    
+    document.body.appendChild(greenDiv);
+    document.body.appendChild(redDiv);
+    document.body.appendChild(yellowDiv);
+    document.body.appendChild(blueDiv);
+</script>
+
+</html>
