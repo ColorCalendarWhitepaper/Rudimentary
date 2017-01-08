@@ -1,0 +1,125 @@
+<!doctype html>
+<meta charset=utf-8>
+<html lang=en>
+
+<head>
+    <title>3 x 3</title>
+</head>
+
+<body>
+
+</body>
+
+<script type="text/javascript">
+    var stageSize = {
+        "stageWidth": window.innerWidth + "px",
+        "stageHeight": window.innerHeight + "px",
+        "thirdWidthDoubled": window.innerWidth / 3 * 2 + "px",
+        "thirdHeightDoubled": window.innerHeight / 3 * 2 + "px",
+        "thirdWidth": window.innerWidth / 3 + "px",
+        "thirdHeight": window.innerHeight / 3 + "px"
+    };
+    
+    var greenDiv = document.createElement('div0');
+    var redDiv = document.createElement('div1');
+    var yellowDiv = document.createElement('div2');
+    var blueDiv = document.createElement('div3');
+    var pinkDiv = document.createElement('div4');
+    var orangeDiv = document.createElement('div5');
+    var purpleDiv = document.createElement('div6');
+    var tealDiv = document.createElement('div7');
+    var brownDiv = document.createElement('div8');
+    
+    greenDiv.style.background = 'green';
+    greenDiv.style.position = 'absolute';
+    greenDiv.style.padding = '0px';
+    greenDiv.style.left = '0px';
+    greenDiv.style.top = '0px';
+    greenDiv.style.width = stageSize.thirdWidth;
+    greenDiv.style.height = stageSize.thirdHeight;
+    greenDiv.innerHTML = stageSize.thirdTimesTwo + "<br>" + stageSize.stageHeight;
+    
+    redDiv.style.background = 'red';
+    redDiv.style.padding = '0px';
+    redDiv.style.position = 'absolute';
+    redDiv.style.top = '0px';
+    redDiv.style.left = stageSize.thirdWidth;
+    redDiv.style.width = stageSize.thirdWidth;
+    redDiv.style.height = stageSize.thirdHeight;
+    redDiv.innerHTML = "<br>";
+    
+    yellowDiv.style.background = 'yellow';
+    yellowDiv.style.padding = '0px';
+    yellowDiv.style.position = 'absolute';
+    yellowDiv.style.top = '0px';
+    yellowDiv.style.left = stageSize.thirdWidthDoubled;
+    yellowDiv.style.width = stageSize.thirdWidth;
+    yellowDiv.style.height = stageSize.thirdHeight;
+    yellowDiv.innerHTML = "<br>";
+    
+    blueDiv.style.background = 'blue';
+    blueDiv.style.padding = '0px';
+    blueDiv.style.position = 'absolute';
+    blueDiv.style.top = stageSize.thirdHeight;
+    blueDiv.style.left = '0px';
+    blueDiv.style.width = stageSize.thirdWidth;
+    blueDiv.style.height = stageSize.thirdHeight;
+    blueDiv.innerHTML = "<br>";
+    
+    pinkDiv.style.background = 'pink';
+    pinkDiv.style.padding = '0px';
+    pinkDiv.style.position = 'absolute';
+    pinkDiv.style.top = stageSize.thirdHeight;
+    pinkDiv.style.left = stageSize.thirdWidth;
+    pinkDiv.style.width = stageSize.thirdWidth;
+    pinkDiv.style.height = stageSize.thirdHeight;
+    pinkDiv.innerHTML = "<br>";
+    
+    orangeDiv.style.background = 'orange';
+    orangeDiv.style.padding = '0px';
+    orangeDiv.style.position = 'absolute';
+    orangeDiv.style.top = stageSize.thirdHeight;
+    orangeDiv.style.left = stageSize.thirdWidthDoubled;
+    orangeDiv.style.width = stageSize.thirdWidth;
+    orangeDiv.style.height = stageSize.thirdHeight;
+    orangeDiv.innerHTML = "<br>";
+    
+    purpleDiv.style.background = 'purple';
+    purpleDiv.style.padding = '0px';
+    purpleDiv.style.position = 'absolute';
+    purpleDiv.style.top = stageSize.thirdHeightDoubled;
+    purpleDiv.style.left = stageSize.thirdWidthDoubled;
+    purpleDiv.style.width = stageSize.thirdWidth;
+    purpleDiv.style.height = stageSize.thirdHeight;
+    purpleDiv.innerHTML = "<br>";
+    
+    tealDiv.style.background = 'teal';
+    tealDiv.style.padding = '0px';
+    tealDiv.style.position = 'absolute';
+    tealDiv.style.top = stageSize.thirdHeightDoubled;
+    tealDiv.style.left = '0px';
+    tealDiv.style.width = stageSize.thirdWidth;
+    tealDiv.style.height = stageSize.thirdHeight;
+    tealDiv.innerHTML = "<br>";
+    
+    brownDiv.style.background = 'brown';
+    brownDiv.style.padding = '0px';
+    brownDiv.style.position = 'absolute';
+    brownDiv.style.top = stageSize.thirdHeightDoubled;
+    brownDiv.style.left = stageSize.thirdWidth;
+    brownDiv.style.width = stageSize.thirdWidth;
+    brownDiv.style.height = stageSize.thirdHeight;
+    brownDiv.innerHTML = "<br>";
+    
+    document.body.appendChild(greenDiv);
+    document.body.appendChild(redDiv);
+    document.body.appendChild(yellowDiv);
+    document.body.appendChild(blueDiv);
+    document.body.appendChild(pinkDiv);
+    document.body.appendChild(orangeDiv);
+    document.body.appendChild(purpleDiv);
+    document.body.appendChild(tealDiv);
+    document.body.appendChild(brownDiv);
+</script>
+
+</html>
